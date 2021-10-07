@@ -6,38 +6,34 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 11:06:10 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/06 14:14:47 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/07 13:33:57 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-char *ft_memchr(char *str, char c, size_t nr)
+void	*ft_memchr(const void *str, char c, size_t nr)
 {
-    size_t i;
+	size_t	i;
+	char	*array;
 
-    i = 0;
-    while (i < nr)
-    {
-        if (*str == c)
-        {
-            return (str);
-        }
-        str++;
-        i++;
-    }
-    return (0);
+	array = (void *)str;
+	i = 0;
+	if (str == NULL)
+		return (NULL);
+	while (i < nr)
+	{
+		if (array[i] == c)
+			return (&array[i]);
+		i++;
+	}
+	return (0);
 }
 
 // int main(void)
 // {
-//     char *str = malloc(20);
-//     str[0] = 'h';
-//     str[1] = 'e';
-//     str[2] = 'l';
-//     str[3] = 'l';
-//     str[4] = 'o';
-//     str[5] = '!';
-//     str = ft_memchr(str, 'l', 2);
+//     char *str;
+//     str = ft_memchr("Bonjour", 'j', 6);
 //     printf("%s", str);
 // }

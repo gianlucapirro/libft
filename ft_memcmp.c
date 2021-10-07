@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strrchr.c                                       :+:    :+:            */
+/*   ft_memcmp.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/06 11:06:51 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/07 10:19:52 by gpirro        ########   odam.nl         */
+/*   Created: 2021/10/07 09:58:58 by gpirro        #+#    #+#                 */
+/*   Updated: 2021/10/07 10:59:55 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 // #include <stdio.h>
-
-char	*ft_strrchr(const char *str, int c)
+// #include <string.h>
+int	ft_memcmp(void *s1, void *s2, size_t n)
 {
-	while (*str && *str != (c))
-		str++;
-	if (*str == (c))
-		return ((char *) str);
+	char	*string1;
+	char	*string2;
+	size_t	i;
+
+	string1 = s1;
+	string2 = s2;
+	i = 0;
+	while (i < n)
+	{
+		if (string1[i] != string2[i])
+			return ((unsigned char) string1[i] - (unsigned char) string2[i]);
+		i++;
+	}
 	return (0);
 }
 
 // int main(void)
 // {
-//     char *answer;
-//     answer = ft_strrchr("hello abba", 97);
-//     printf("%s", answer);
-//     // char a = 97;
-//     // printf("%c", a);
+// 	printf("%i", ft_memcmp("Hello World!", "Helololololo", 13));
 // }

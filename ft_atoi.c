@@ -6,7 +6,7 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/20 11:10:07 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/06 16:01:18 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/07 09:56:50 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ int	ft_atoi(char *str)
 	return (nr * neg);
 }
 
-int main(void)
-{
-	printf("%d", ft_atoi("--120"));
-	printf("%d", atoi("--120"));
-}
+// int main(void)
+// {
+// 	printf("%d", ft_atoi("--120"));
+// 	printf("%d", atoi("--120"));
+// }
