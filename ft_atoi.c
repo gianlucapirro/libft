@@ -15,22 +15,10 @@
 
 int	ft_check_if_negative(char *str)
 {
-	int	counter;
-	int	negative;
-
-	counter = 0;
-	negative = 0;
-	while (str[counter])
-	{
-		if (str[counter] == '-')
-			negative++;
-		counter++;
-	}
-	counter = 0;
-	if (negative % 2 == 1)
+	if (str[0] == '-')
 		return (-1);
 	else
-		return (1);
+		return (1);	
 }
 
 int	ft_atoi(char *str)
@@ -60,6 +48,6 @@ int	ft_atoi(char *str)
 
 // int main(void)
 // {
-// 	printf("%d", ft_atoi("--120"));
-// 	printf("%d", atoi("--120"));
+// 	printf("ft: %d\n", ft_atoi("-1-2"));
+// 	printf("og: %d", atoi("-47-5"));
 // }
