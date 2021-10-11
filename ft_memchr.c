@@ -6,7 +6,7 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 11:06:10 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/07 13:33:57 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/08 10:51:17 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ void	*ft_memchr(const void *str, char c, size_t nr)
 	while (i < nr)
 	{
 		if (array[i] == c)
+		{
 			return (&array[i]);
+		}
 		i++;
 	}
 	return (0);

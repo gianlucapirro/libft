@@ -6,15 +6,17 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/13 17:00:36 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/07 11:32:38 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/08 12:27:56 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <ctype.h>
 
-int	is_print(unsigned char c)
+int	ft_isprint(unsigned char c)
 {
-	if (c >= 32 && c <= 127)
+	if (c >= 32 && c < 127)
 		return (1);
 	else
 		return (0);
@@ -22,5 +24,12 @@ int	is_print(unsigned char c)
 
 // int main(void)
 // {
-// 	printf("%d", is_print());
+// 	int i;
+// 	i = 123;
+// 	while (i <= 127)
+// 	{
+// 		printf("ft: %d\n", ft_isprint(i));
+// 		printf("og: %d\n", isprint(i));
+// 		i++;
+// 	}
 // }

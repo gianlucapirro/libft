@@ -6,7 +6,7 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 11:06:33 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/07 14:32:53 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/08 11:28:20 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,5 @@ int	ft_strlcat(char *dest, const char *src, size_t size)
 // 	//printing
 // 	// printf("og: %lu | %s\n", strlcat(dest, "lorem", 15), dest);
 // 	printf("ft: %d | %s\n", ft_strlcat(dest1, "lorem", 15), dest1);	
+// 	// ft_print_result(ft_strlcat(dest, "lorem", 15));
 // }
