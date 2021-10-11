@@ -6,21 +6,21 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/07 09:58:58 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/07 10:59:55 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/08 11:27:59 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 // #include <stdio.h>
 // #include <string.h>
-int	ft_memcmp(void *s1, void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	char	*string1;
 	char	*string2;
 	size_t	i;
 
-	string1 = s1;
-	string2 = s2;
+	string1 = (char *)s1;
+	string2 = (char *)s2;
 	i = 0;
 	while (i < n)
 	{
@@ -33,5 +33,6 @@ int	ft_memcmp(void *s1, void *s2, size_t n)
 
 // int main(void)
 // {
-// 	printf("%i", ft_memcmp("Hello World!", "Helololololo", 13));
+// 	printf("%i\n", ft_memcmp("Hello World!", "Helololololo", 13));
+// 	printf("%i", memcmp("Hello World!", "Helololololo", 13));
 // }
