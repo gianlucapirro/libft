@@ -6,7 +6,7 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/04 13:22:04 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/04 15:21:52 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/11 19:03:39 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,14 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	char	*array;
+	int		total;
 
-	if (count == 0 || size == 0)
+	total = count * size;
+	if (total == 0)
+		total = 1;
+	array = malloc(total);
+	if (!array)
 		return (NULL);
-	array = malloc(count * size);
-	ft_memset(array, 0, (count * size));
+	ft_memset(array, 0, total);
 	return (array);
 }

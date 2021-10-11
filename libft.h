@@ -6,7 +6,7 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 11:06:51 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/08 12:23:04 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/11 16:57:31 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 
 void			ft_bzero(void *string, size_t nr);
 int				ft_atoi(char *str);
-int				ft_isalnum(unsigned char c);
-int				ft_isalpha(unsigned char c);
-int				ft_isascii(char c);
-int				ft_isdigit(unsigned char c);
-int				ft_isprint(unsigned char c);
+int				ft_isalnum(int c);
+int				ft_isalpha(int c);
+int				ft_isascii(int c);
+int				ft_isdigit(int c);
+int				ft_isprint(int c);
 void			*ft_memchr(const void *str, char c, size_t nr);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 char			*ft_memcpy(void *dest, void *src, size_t n);

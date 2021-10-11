@@ -6,13 +6,13 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/13 17:10:52 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/06 12:29:25 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/11 17:00:14 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
 
-char	ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 	{

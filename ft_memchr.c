@@ -6,7 +6,7 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 11:06:10 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/08 10:51:17 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/11 16:59:10 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ void	*ft_memchr(const void *str, char c, size_t nr)
 
 	array = (void *)str;
 	i = 0;
-	if (str == NULL)
-		return (NULL);
 	while (i < nr)
 	{
 		if (array[i] == c)

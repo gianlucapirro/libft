@@ -6,14 +6,14 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 11:06:33 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/08 11:28:20 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/11 12:50:10 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "libft.h"
 
 int	ft_strlcat(char *dest, const char *src, size_t size)
 {
@@ -24,15 +24,15 @@ int	ft_strlcat(char *dest, const char *src, size_t size)
 	destsize = ft_strlen(dest);
 	srcsize = ft_strlen((char *)src);
 	i = 0;
-	while ((size - 1) <= destsize)
+	if (size == 0 || destsize >= size)
 		return (srcsize + size);
-	while (destsize + i < size - 1)
+	while (src[i] && i < size - destsize - 1)
 	{
 		dest[destsize + i] = src[i];
 		i++;
 	}
 	dest[destsize + i] = '\0';
-	return (destsize + srcsize);
+	return (srcsize + destsize);
 }
 
 // int	main(void)
@@ -43,18 +43,18 @@ int	ft_strlcat(char *dest, const char *src, size_t size)
 
 // 	if (!(dest = (char *)malloc(sizeof(*dest) * 15)))
 // 		return (0);
-// 	memset(dest, 0, 15);
-// 	memset(dest, 'r', 6);
+// 	memset(dest, 'r', 14);
+// 	dest[11] = 'a';
 // 	//dest 2
 // 	char	*dest1;
 // 	int		arg1;
 
 // 	if (!(dest1 = (char *)malloc(sizeof(*dest1) * 15)))
 // 		return (0);
-// 	memset(dest1, 0, 15);
-// 	memset(dest1, 'r', 6);
+// 	memset(dest1, 'r', 14);
+// 	dest1[11] = 'a';
 // 	//printing
-// 	// printf("og: %lu | %s\n", strlcat(dest, "lorem", 15), dest);
-// 	printf("ft: %d | %s\n", ft_strlcat(dest1, "lorem", 15), dest1);	
+// 	printf("og: %lu | %s\n", strlcat(dest, "lorem", 15), dest);
+// 	printf("ft: %d | %s\n", ft_strlcat(dest, "lorem", 15), dest1);
 // 	// ft_print_result(ft_strlcat(dest, "lorem", 15));
 // }

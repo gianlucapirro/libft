@@ -6,7 +6,7 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/04 14:02:44 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/08 12:47:59 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/11 15:23:30 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ unsigned int	ft_strlcpy(char *des, char *src, size_t size)
 	size_t	i;
 
 	i = 0;
-	while (i < (size - 1))
+	if (size <= 0)
+		return (ft_strlen(src));
+	while (i < (size - 1) && src[i])
 	{
 		des[i] = src[i];
 		i++;

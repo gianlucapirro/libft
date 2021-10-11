@@ -6,7 +6,7 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/13 17:00:36 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/08 12:27:56 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/11 16:56:45 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <ctype.h>
 
-int	ft_isprint(unsigned char c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c < 127)
 		return (1);

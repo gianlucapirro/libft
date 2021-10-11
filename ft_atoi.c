@@ -6,7 +6,7 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/20 11:10:07 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/08 11:50:10 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/11 18:57:28 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ int	ft_atoi(char *str)
 
 // int main(void)
 // {
-// 	printf("ft: %d\n", ft_atoi("-99999999999999999999999997"));
-// 	printf("og: %d", atoi("-99999999999999999999999997"));
+// 	printf("ft: %d\n", ft_atoi("9999999999999999999"));
+// 	printf("og: %d", atoi("9999999999999999999"));
 // }

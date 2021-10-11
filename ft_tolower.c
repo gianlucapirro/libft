@@ -6,13 +6,13 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/13 19:50:30 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/06 12:30:58 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/11 17:00:17 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
 
-char	ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 	{

@@ -6,7 +6,7 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 11:06:44 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/07 11:14:17 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/11 17:44:44 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,11 @@ char	*ft_strnstr(char *haystack, char *needle, size_t nr)
 
 	size = ft_strlen(needle);
 	i = 0;
-	if (needle == NULL || ft_strlen(needle) == 0)
-		return ((char *) haystack);
-	if (size > nr)
-		return (NULL);
+	if (*needle == '\0')
+		return (haystack);
 	while (i < nr)
 	{
-		printf("%s\n", &haystack[i]);
-		if (ft_strncmp(&haystack[i], needle, ft_strlen(needle)) == 0)
+		if (ft_strncmp(haystack + i, needle, ft_strlen(needle)) == 0)
 		{
 			if (i + ft_strlen(needle) > nr)
 				return (NULL);
@@ -43,7 +40,7 @@ char	*ft_strnstr(char *haystack, char *needle, size_t nr)
 // int main(void)
 // {
 //     char *str;
-//     str = ft_strnstr("Hello world Im gian Luca ", "", 13);
+//     str = ft_strnstr(NULL, "Im", 26);
 //     // str = strnstr("Hesdllo world !!!", "world", 20);
 //     printf("%s", str);
 // }
