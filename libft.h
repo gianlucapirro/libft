@@ -6,7 +6,7 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 11:06:51 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/11 16:57:31 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/13 10:17:41 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,11 @@ char			*ft_strrchr(const char *str, int c);
 char			ft_tolower(int c);
 char			ft_toupper(int c);
 void	        *ft_calloc(size_t count, size_t size);
+char	        *ft_strjoin(char const *s1, char const *s2);
 char            *ft_strdup(const char *s1);
+char	        *ft_strtrim(char const *s1, char const *set);
+char	        *ft_substr(char const *s, unsigned int start, size_t len);
+char            **ft_split(char const *s, char c);
 
 
 #endif
