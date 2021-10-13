@@ -6,7 +6,7 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 11:06:51 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/13 10:17:41 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/13 14:31:30 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char			*ft_memmove(void *dest, const void *src, size_t n);
 char			*ft_memset(void *string, int character, int len);
 char			*ft_strchr(const char *string, int c);
 int				ft_strlcat(char *dest, const char *src, size_t size);
-unsigned int	ft_strlcpy(char *des, char *src, size_t size);
+unsigned int	ft_strlcpy(char *des, const char *src, size_t size);
 int				ft_strlen(char *str);
 int				ft_strncmp(char *s1, char *s2, size_t n);
 char			*ft_strnstr(char *haystack, char *needle, size_t nr);
