@@ -6,27 +6,13 @@
 /*   By: gianlucapirro <gianlucapirro@student.42      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/12 18:51:28 by gianlucapir   #+#    #+#                 */
-/*   Updated: 2021/10/14 11:06:12 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/14 11:08:47 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
-
-char	**malloc_free(char **twodarray)
-{
-	int	i;
-
-	i = 0;
-	while (twodarray[i])
-	{
-		free(twodarray[i]);
-		i++;
-	}
-	free(twodarray);
-	return (NULL);
-}
 
 int	string_amount(char const *s, char c)
 {
@@ -71,6 +57,20 @@ void	next_string(char **string, int *string_len, char c)
 		(*string_len)++;
 		i++;
 	}
+}
+
+char	**malloc_free(char **twodarray)
+{
+	int	i;
+
+	i = 0;
+	while (twodarray[i])
+	{
+		free(twodarray[i]);
+		i++;
+	}
+	free(twodarray);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
