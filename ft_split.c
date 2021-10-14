@@ -6,7 +6,7 @@
 /*   By: gianlucapirro <gianlucapirro@student.42      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/12 18:51:28 by gianlucapir   #+#    #+#                 */
-/*   Updated: 2021/10/13 15:59:33 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/14 11:06:12 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,110 +14,97 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char	*trim_string(const char *array, char c)
+char	**malloc_free(char **twodarray)
 {
-	char	*new;
-	char	string[2];
-
-	if (!array)
-		return (0);
-	string[0] = c;
-	string[1] = '\0';
-	new = ft_strtrim(array, string);
-	return (new);
-}
-
-int	count_occurence(const char *s, char c)
-{
-	int		amount;
-	int		i;
-	char	lastvar;
+	int	i;
 
 	i = 0;
-	amount = 0;
-	lastvar = c;
-	while (s[i])
+	while (twodarray[i])
 	{
-		if (s[i] == c && lastvar != c)
-			amount++;
-		lastvar = s[i];
+		free(twodarray[i]);
 		i++;
 	}
-	return (amount);
+	free(twodarray);
+	return (NULL);
 }
 
-int	free_mem(char **array, int j)
+int	string_amount(char const *s, char c)
 {
-	while (--j)
-		free(array[j]);
-	free(array);
-	return (-1);
-}
+	int	i;
+	int	nb_strs;
 
-int	ihatenorminette(const char *s, char **array, char c, int i)
-{
-	int		j;
-	int		size;
-	char	lastvar;
-
-	j = 0;
-	size = 0;
+	if (!s[0])
+		return (0);
+	i = 0;
+	nb_strs = 0;
+	while (s[i] && s[i] == c)
+		i++;
 	while (s[i])
 	{
-		if ((s[i] == c && lastvar != c) || (ft_strlen((char *)s) == i - 1 && s[0]))
+		if (s[i] == c)
 		{
-			if (ft_strlen((char *)s) == i - 1)
-			{
-				// i++;
-				// size++;
-			}
-			array[j] = malloc(sizeof(char) * (size + 1));
-			if (!array[j])
-				return (free_mem(array, j));
-			ft_strlcpy(array[j++], s + i - size, size + 1);
-			size = 0;
+			nb_strs++;
+			while (s[i] && s[i] == c)
+				i++;
+			continue ;
 		}
-		else if (s[i] != c)
-			size++;
-		if (ft_strlen((char *)s) != i || !*s)
-			lastvar = s[i++];
+		i++;
 	}
-	// if (*s)
-	// {
-	// 	array[j] = malloc(sizeof(char) * (size + 1));
-	// 	if (!array[j])
-	// 		return (free_mem(array, j));
-	// 	ft_strlcpy(array[j++], s + i - size, size + 1);
-	// }
-	return (j);
+	if (s[i - 1] != c)
+		nb_strs++;
+	return (nb_strs);
+}
+
+void	next_string(char **string, int *string_len, char c)
+{
+	int	i;
+
+	*string += *string_len;
+	*string_len = 0;
+	i = 0;
+	while (**string && **string == c)
+		(*string)++;
+	while ((*string)[i])
+	{
+		if ((*string)[i] == c)
+			return ;
+		(*string_len)++;
+		i++;
+	}
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**array;
-	int		i;
+	char			**twodarray;
+	char			*string;
+	int				string_len;
+	int				nb_strs;
+	int				i;
 
-	s = (const char *)trim_string(s, c);
 	if (!s)
-		return (0);
-	array = malloc(sizeof(char *) * (count_occurence(s, c) + 2));
-	if (!array)
-		return (0);
-	i = ihatenorminette(s, array, c, 0);
-	if (i == -1)
-		return (0);
-	array[i] = 0;
-	return (array);
+		return (NULL);
+	nb_strs = string_amount(s, c);
+	twodarray = (char **)malloc(sizeof(char *) * (nb_strs + 1));
+	if (!twodarray)
+		return (NULL);
+	i = 0;
+	string = (char *)s;
+	string_len = 0;
+	while (i < nb_strs)
+	{
+		next_string(&string, &string_len, c);
+		twodarray[i] = malloc(sizeof(char) * (string_len + 1));
+		if (!twodarray[i])
+			return (malloc_free(twodarray));
+		ft_strlcpy(twodarray[i++], string, string_len + 1);
+	}
+	twodarray[i] = 0;
+	return (twodarray);
 }
 
 // int main (void)
 // {
-//     int j;
-//     char **array = ft_split(0, 0);
-//     // j = 0;
-//     // while (array[j])
-//     //     j++;
-//     // for (size_t i = 0; i <= j; i++)
-//         // printf("%s\n", array[i]);
+// 	char **str = ft_split(" Hallo  Wereld   test!!", ' ');
+// 	for (size_t i = 0; i < 4; i++)
+// 			printf("%s\n", str[i]);
 // }
-
