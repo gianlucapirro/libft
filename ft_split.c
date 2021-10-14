@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_split.c                                         :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: gianlucapirro <gianlucapirro@student.42      +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2021/10/12 18:51:28 by gianlucapir   #+#    #+#                 */
-/*   Updated: 2021/10/13 14:49:53 by gpirro        ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gianlucapirro <gianlucapirro@student.42    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/12 18:51:28 by gianlucapir       #+#    #+#             */
+/*   Updated: 2021/10/14 10:53:28 by gianlucapir      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,93 +14,109 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char    *trim_string(const char *array, char c)
+char	**malloc_free(char **twodarray)
 {
-    char    *new;
-    char    string[2];
-
-    if (!array)
-        return (0);
-    string[0] = c;
-    string[1] = '\0';
-    new = ft_strtrim(array, string);
-    return (new);
-}
-
-int count_occurence(const char *s, char c)
-{
-	int		amount;
-	int		i;
-    char    lastvar;
+	int	i;
 
 	i = 0;
-	amount = 0;
-    lastvar = c;
+	while (twodarray[i])
+	{
+		free(twodarray[i]);
+		i++;
+	}
+	free(twodarray);
+	return (NULL);
+}
+
+int	string_amount(char const *s, char c)
+{
+	int	i;
+	int	nb_strs;
+
+	if (!s[0])
+		return (0);
+	i = 0;
+	nb_strs = 0;
+	//skipping c aan het begin van de zin
+	while (s[i] && s[i] == c)
+		i++;
 	while (s[i])
 	{
-        if (s[i] == c && lastvar != c)
-            amount++;
-        lastvar = s[i];
-        i++;
+		// vind het aantal char in de zin == aantal arrays - 1
+		if (s[i] == c)
+		{
+			nb_strs++;
+			//als er meerdere char achter elkaar staan dan skipt hij die
+			while (s[i] && s[i] == c)
+				i++;
+			continue ;
+		}
+		i++;
 	}
-	return (amount);
+	//als de laatste char != aan c dan voegt hij nog een woord toe (het laatste woord heeft geen c dus telt hij die niet mee)
+	if (s[i - 1] != c)
+		nb_strs++;
+	return (nb_strs);
 }
 
-void    free_mem(char **array, int j)
+void	next_string(char **string, int *string_len, char c)
 {
-    while(--j)
-        free(array[j]);
-    free(array);
+	int	i;
+
+	printf("test1: *string = %s || string_len = %i\n", *string, *string_len);
+	*string += *string_len;
+	printf("test2: *string = %s || string_len = %i\n", *string, *string_len);
+	*string_len = 0;
+	i = 0;
+	//skip char aan het begin van de zin
+	while (**string && **string == c)
+		(*string)++;
+	while ((*string)[i])
+	{
+		if ((*string)[i] == c)
+			return ;
+		// als char niet gelijk is aan *string[i] dan voeg +1 aan lengte -> string_len++;
+		(*string_len)++;
+		i++;
+	}
 }
 
-char    **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-    char    **array;
-    int     i;
-    int     j;
-    int     size;
-    char    lastvar;
-    
-    s = (const char *)trim_string(s, c);
-    if (!s)
-        return (0);
-    i = count_occurence(s, c);
-    array = malloc(sizeof(char *) * (i + 2));
-    if (!array)
-        return (0);
-    i = 0;
-    j = 0;
-    size = 0;
-    while (s[i])
-    {
-        if (s[i] == c && lastvar != c)
-        {
-            array[j] = malloc(sizeof(char) * (size + 1));
-            if (!array[j])
-            {
-                free_mem(array, j);
-                return (0);
-            }
-            ft_strlcpy(array[j], s + i - size, size + 1);
-            j++;
-            size = 0;
-        }
-        else if (s[i] != c)
-            size++;
-        lastvar = s[i];
-        i++;
-    }
-    if (*s)
-    {
-        array[j] = malloc(sizeof(char) * (size + 1));
-        if (!array[j])
-        {
-            free_mem(array, j);
-            return (0);
-        }
-        ft_strlcpy(array[j], s + i - size, size + 1);
-        j++;
-    }
-    array[j] = 0;
-    return (array);
+	char			**twodarray;
+	char			*string;
+	int				string_len;
+	int				nb_strs;
+	int				i;
+
+	if (!s)
+		return (NULL);
+	nb_strs = string_amount(s, c);
+	// malloc voor het aantaal arrays dat moet komen && protect
+	twodarray = (char **)malloc(sizeof(char *) * (nb_strs + 1));
+	if (!twodarray)
+		return (NULL);
+	i = 0;
+	string = (char *)s;
+	string_len = 0;
+	while (i < nb_strs)
+	{
+		//changes string_len
+		next_string(&string, &string_len, c);
+		//malloc twodarray and protect
+		twodarray[i] = (char *)malloc(sizeof(char) * (string_len + 1));
+		if (!twodarray[i])
+			return (malloc_free(twodarray));
+		ft_strlcpy(twodarray[i], string, string_len + 1);
+		i++;
+	}
+	twodarray[i] = 0;
+	return (twodarray);
 }
+
+// int main (void)
+// {
+// 	char **str = ft_split(" Hallo  Wereld   test!!", ' ');
+// 	for (size_t i = 0; i < 4; i++)
+// 			printf("%s\n", str[i]);
+// }
