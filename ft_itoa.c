@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gianlucapirro <gianlucapirro@student.42    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/14 11:33:18 by gpirro            #+#    #+#             */
-/*   Updated: 2021/10/15 00:26:10 by gianlucapir      ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_itoa.c                                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: gianlucapirro <gianlucapirro@student.42      +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/10/14 11:33:18 by gpirro        #+#    #+#                 */
+/*   Updated: 2021/10/15 12:43:28 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,31 +26,40 @@ int	find_length(int number)
 	return (amount);
 }
 
-char	*ft_itoa(int n)
+void	fill_array(char *str, long long number, long length)
 {
-	long	number;
-	int		length;
-	char	*str;
-
-	number = n;
-	length = find_length(n);
-	str = (char *)malloc(sizeof(char) * (length + 1));
-	if (!str)
-		return (0);
 	str[length--] = '\0';
-	if (n == 0)
+	if (number == 0)
 		str[0] = '0';
 	if (number < 0)
 	{
 		str[0] = '-';
 		number *= -1;
-		length++;
 	}
 	while (number > 0)
 	{
 		str[length--] = '0' + (number % 10);
 		number /= 10;
 	}
+}
+
+char	*ft_itoa(int n)
+{
+	long long	number;
+	long		length;
+	char		*str;
+
+	if (n < 0)
+		length = find_length(n) + 1;
+	else if (n == 0)
+		length = 1;
+	else
+		length = find_length(n);
+	number = n;
+	str = (char *)malloc(sizeof(char) * (length + 1));
+	if (!str)
+		return (0);
+	fill_array(str, number, length);
 	return (str);
 }
 
