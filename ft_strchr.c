@@ -6,11 +6,11 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 11:06:25 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/07 10:17:25 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/15 17:36:24 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *string, int c)
 {
@@ -20,10 +20,3 @@ char	*ft_strchr(const char *string, int c)
 		return ((char *)string);
 	return (0);
 }
-
-// int main(void)
-// {
-//     char *answer;
-//     answer = ft_strchr("Hello world!", 'w');
-//     printf("%s", answer);
-// }

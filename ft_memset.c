@@ -6,13 +6,11 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 11:06:17 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/07 10:16:55 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/15 17:35:29 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
 char	*ft_memset(void *string, int character, int len)
 {
@@ -28,18 +26,3 @@ char	*ft_memset(void *string, int character, int len)
 	}
 	return (return_val);
 }
-
-// int	main(void)
-// {
-// 	char	*string;
-// 	char 	*s = malloc(40);
-// 	s[0] = 'H';
-// 	s[1] = 'E';
-// 	s[2] = 'L';
-// 	s[3] = 'L';
-// 	s[4] = 'O';
-// 	s[5] = '!';
-// 	// string = ft_memset(s, 97, 4);
-// 	string = memset(s, 97, 4);
-// 	printf("%s", string);
-// }

@@ -6,15 +6,13 @@
 /*   By: gianlucapirro <gianlucapirro@student.42      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/12 18:51:28 by gianlucapir   #+#    #+#                 */
-/*   Updated: 2021/10/14 11:08:47 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/15 17:36:08 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-int	string_amount(char const *s, char c)
+static int	string_amount(char const *s, char c)
 {
 	int	i;
 	int	nb_strs;
@@ -41,7 +39,7 @@ int	string_amount(char const *s, char c)
 	return (nb_strs);
 }
 
-void	next_string(char **string, int *string_len, char c)
+static void	next_string(char **string, int *string_len, char c)
 {
 	int	i;
 
@@ -59,7 +57,7 @@ void	next_string(char **string, int *string_len, char c)
 	}
 }
 
-char	**malloc_free(char **twodarray)
+static char	**malloc_free(char **twodarray)
 {
 	int	i;
 
@@ -101,10 +99,3 @@ char	**ft_split(char const *s, char c)
 	twodarray[i] = 0;
 	return (twodarray);
 }
-
-// int main (void)
-// {
-// 	char **str = ft_split(" Hallo  Wereld   test!!", ' ');
-// 	for (size_t i = 0; i < 4; i++)
-// 			printf("%s\n", str[i]);
-// }

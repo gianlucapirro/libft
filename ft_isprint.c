@@ -6,13 +6,11 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/13 17:00:36 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/11 16:56:45 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/15 17:34:12 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <ctype.h>
 
 int	ft_isprint(int c)
 {
@@ -21,15 +19,3 @@ int	ft_isprint(int c)
 	else
 		return (0);
 }
-
-// int main(void)
-// {
-// 	int i;
-// 	i = 123;
-// 	while (i <= 127)
-// 	{
-// 		printf("ft: %d\n", ft_isprint(i));
-// 		printf("og: %d\n", isprint(i));
-// 		i++;
-// 	}
-// }

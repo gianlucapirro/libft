@@ -6,12 +6,10 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 11:06:44 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/11 17:44:44 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/15 17:37:13 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
 char	*ft_strnstr(char *haystack, char *needle, size_t nr)
@@ -36,11 +34,3 @@ char	*ft_strnstr(char *haystack, char *needle, size_t nr)
 	}
 	return (NULL);
 }
-
-// int main(void)
-// {
-//     char *str;
-//     str = ft_strnstr(NULL, "Im", 26);
-//     // str = strnstr("Hesdllo world !!!", "world", 20);
-//     printf("%s", str);
-// }

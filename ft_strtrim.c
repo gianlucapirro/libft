@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gianlucapirro <gianlucapirro@student.42    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 15:09:24 by gianlucapir       #+#    #+#             */
-/*   Updated: 2021/10/12 18:20:33 by gianlucapir      ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_strtrim.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: gianlucapirro <gianlucapirro@student.42      +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/10/12 15:09:24 by gianlucapir   #+#    #+#                 */
+/*   Updated: 2021/10/15 17:37:36 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_startpos(char *s1, char *set)
+static int	get_startpos(char *s1, char *set)
 {
 	int	i;
 	int	len;
@@ -28,7 +28,7 @@ int	get_startpos(char *s1, char *set)
 	return (i);
 }
 
-int	get_endpos(char *s1, char *set)
+static int	get_endpos(char *s1, char *set)
 {
 	int	i;
 	int	len;

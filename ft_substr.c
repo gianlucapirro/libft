@@ -6,13 +6,11 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 19:12:49 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/13 10:16:49 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/15 17:37:43 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -40,9 +38,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	new[i] = '\0';
 	return (new);
 }
-
-// int main(void)
-// {
-//     char *test = ft_substr("Hello world!", 4, 10);
-//     printf("%s", test);
-// }

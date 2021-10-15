@@ -6,14 +6,13 @@
 /*   By: gianlucapirro <gianlucapirro@student.42      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/14 11:33:18 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/15 12:43:28 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/15 17:34:05 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	find_length(int number)
+static int	find_length(int number)
 {
 	int	amount;
 
@@ -26,7 +25,7 @@ int	find_length(int number)
 	return (amount);
 }
 
-void	fill_array(char *str, long long number, long length)
+static void	fill_array(char *str, long long number, long length)
 {
 	str[length--] = '\0';
 	if (number == 0)
@@ -62,10 +61,3 @@ char	*ft_itoa(int n)
 	fill_array(str, number, length);
 	return (str);
 }
-
-// int main(void)
-// {
-// 	char *res = ft_itoa(0);
-// 	printf("%s", res);
-// 	free(res);
-// }

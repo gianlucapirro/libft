@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gianlucapirro <gianlucapirro@student.42    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 21:50:20 by gianlucapir       #+#    #+#             */
-/*   Updated: 2021/10/12 12:57:46 by gianlucapir      ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_strjoin.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: gianlucapirro <gianlucapirro@student.42      +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/10/11 21:50:20 by gianlucapir   #+#    #+#                 */
+/*   Updated: 2021/10/15 17:36:46 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -41,18 +40,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	return (NULL);
 }
-
-// int	main(void)
-// {
-// 	char	s1[] = "lorem ipsum";
-// 	char	s2[] = "dolor sit amet";
-// 	char	*strjoin;
-// 	int		arg;
-
-// 	if (!(strjoin = ft_strjoin(s1, s2)))
-// 		printf("NULL");
-// 	else
-// 		printf("%s", strjoin);
-// 	if (strjoin == s1 || strjoin == s2)
-// 		printf("\nA new string was not returned");
-// }

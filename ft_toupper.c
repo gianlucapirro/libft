@@ -6,11 +6,11 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/13 17:10:52 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/11 17:00:14 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/15 17:38:07 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
+#include "libft.h"
 
 int	ft_toupper(int c)
 {
@@ -20,8 +20,3 @@ int	ft_toupper(int c)
 	}
 	return (c);
 }
-
-// int main(void)
-// {
-// 	printf("%c", ft_strupcase('c'));
-// }

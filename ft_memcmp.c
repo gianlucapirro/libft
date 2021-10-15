@@ -6,13 +6,12 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/07 09:58:58 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/11 13:03:44 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/15 17:40:28 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <stdio.h>
-// #include <string.h>
+
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	char	*string1;
@@ -30,9 +29,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
-// int main(void)
-// {
-// 	printf("%i\n", ft_memcmp("Hello World!", "Helololololo", 13));
-// 	printf("%i", memcmp("Hello World!", "Helololololo", 13));
-// }

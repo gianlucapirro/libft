@@ -6,15 +6,13 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/20 11:10:07 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/15 14:04:14 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/15 17:34:42 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
 
-int	ft_check_if_negative(char *c)
+static int	ft_check_if_negative(char *c)
 {
 	if (*c == '-')
 		return (-1);
@@ -47,9 +45,3 @@ int	ft_atoi(char *str)
 	}
 	return (nr * neg);
 }
-
-// int main(void)
-// {
-// 	printf("ft: %d\n", ft_atoi("9999999999999999999"));
-// 	printf("og: %d", atoi("9999999999999999999"));
-// }
