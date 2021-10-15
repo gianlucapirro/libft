@@ -6,7 +6,7 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 11:22:56 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/11 16:54:30 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/15 16:11:29 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@
 char	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char		*dest2;
-	const char	*src2 = src;
+	const char	*src2;
 	size_t		i;
 
+	src2 = src;
 	dest2 = dest;
 	if (dest == NULL && src == NULL)
 		return (NULL);
