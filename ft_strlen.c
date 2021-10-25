@@ -6,18 +6,16 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/16 11:20:31 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/07/16 11:28:02 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/25 17:53:31 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
-	{
 		i++;
-	}
 	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 11:06:51 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/15 17:37:19 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/25 16:46:01 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_strrchr(const char *str, int c)
 	storage = 0;
 	while (str[i])
 	{
-		if (str[i] == c)
+		if (str[i] == (char)c)
 			storage = (char *) &str[i];
 		i++;
 	}
-	if (str[i] == c)
+	if (str[i] == (char)c)
 		storage = (char *) &str[i];
 	return (storage);
 }

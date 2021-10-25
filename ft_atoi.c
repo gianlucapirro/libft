@@ -6,42 +6,36 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/20 11:10:07 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/15 17:34:42 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/25 20:14:02 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_check_if_negative(char *c)
+int	ft_atoi(const char *s)
 {
-	if (*c == '-')
-		return (-1);
-	else
-		return (1);
-}
+	unsigned int	nr;
+	int				neg;
 
-int	ft_atoi(char *str)
-{
-	int	i;
-	int	nr;
-	int	neg;
-
-	i = 0;
 	nr = 0;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' || \
-	str[i] == '\v' || str[i] == '\r' || str[i] == '\f')
-		i++;
-	neg = ft_check_if_negative(str);
-	if (str[i] == '-' || str[i] == '+')
+	neg = 1;
+	while ((*s >= '\t' && *s <= '\r') || *s == ' ' )
+		s++;
+	if (*s == '-')
+		neg = -1;
+	if (*s == '+' || *s == '-')
+		s++;
+	while (*s >= '0' && *s <= '9')
 	{
-		neg = ft_check_if_negative(&str[i]);
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
+		if ((nr * 10 + (*s - '0')) < nr)
+		{
+			if (neg > 0)
+				return (-1);
+			return (0);
+		}
 		nr = nr * 10;
-		nr = nr + (int)(str[i] - '0');
-		i++;
+		nr = nr + (int)(*s - '0');
+		s++;
 	}
 	return (nr * neg);
 }

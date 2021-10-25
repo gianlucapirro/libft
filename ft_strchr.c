@@ -6,7 +6,7 @@
 /*   By: gpirro <gpirro@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 11:06:25 by gpirro        #+#    #+#                 */
-/*   Updated: 2021/10/15 17:36:24 by gpirro        ########   odam.nl         */
+/*   Updated: 2021/10/25 16:47:00 by gpirro        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strchr(const char *string, int c)
 {
-	while (*string && *string != c)
+	while (*string && *string != (char)c)
 		string++;
-	if (*string == c)
+	if (*string == (char)c)
 		return ((char *)string);
 	return (0);
 }
